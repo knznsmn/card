@@ -1,0 +1,23 @@
+#root {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	margin: 0 auto;
+	align-items: center;
+}
+#pane {
+	margin: 0 auto;
+	width: calc(500px * 1.618);
+	height: 500px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: solid #000 1px;
+	border-radius: 1rem;
+}
+.selections {
+	margin: 2rem;
+	width: 100px;
+	height: 100px;
+	background: hsl(125, 42%, 90%);
+}
