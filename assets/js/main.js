@@ -73,17 +73,24 @@ function Page() {
 
 }
 // Processes
-function just32(a) {
-	const remainder = a.length % 32;
+function just32(a, type) {
+	let typeMaxNo;
+	if (type === 'card') {
+		typeMaxNo = 32;
+	}
+	else if (type === 'code') {
+		typeMaxNo = 198;
+	}
+	const remainder = a.length % typeMaxNo;
 	if (remainder !== 0) {
 		a.splice(-remainder);
 	}
 	return a;
 }
-function extract() {
+function extract(type) {
 	const inputText = document.getElementById('inputText').value;
 	const regex = /\b\d{5,6}\b/g;
-	return just32(inputText.match(regex) || []);
+	return just32(inputText.match(regex) || [], type);
 }
 function listGen() {
 	const btn = {
@@ -114,7 +121,7 @@ function pageGen(type) {
 	const btn = {
 		duration: document.getElementById('duration'),
 	}
-	const matches = extract();
+	const matches = extract(type);
 
 	const a4 = document.createElement('div');
 	a4.setAttribute('id', 'a4');
@@ -146,7 +153,6 @@ function pageGen(type) {
 		}
 	}
 	else if (type === "code") {
-		console.log("IT'S 198!");
 		cardsPerPage = 198;
 		cardClass = 'code';
 
@@ -165,7 +171,7 @@ function pageGen(type) {
 		}
 	}
 	main.remove();
-	printContainer();
+	setTimeout(printContainer(), 2000);
 }
 function printContainer() {
 	window.print();
