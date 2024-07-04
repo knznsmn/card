@@ -243,6 +243,13 @@ button:hover {
 	box-sizing: border-box;
 	margin-bottom: 5px;
 }
+.credits {
+	text-align: center;
+}
+p.js {
+	font-size: .85rem;
+	opacity: 0.3;
+}
 #footer {
 	margin: 1rem auto;
 }

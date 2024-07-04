@@ -27,14 +27,14 @@ const cms = {
 function Header(show) {
 	if (show) {
 		return `<header id="menu">
-				<ul>
-					<li><a href=""><i id="home" class="i-amha"></i></a></li>
-				</ul>
-				<h2>Wi-Fi Cards Beautifier</h2>
-				<ul class="tools">
-					<li><a href="https://github.com/knznsmn/amha"><i class="i-github"></i></a></li>
-				</ul>
-        	</header>`
+					<ul>
+						<li><a href=""><i id="home" class="i-amha"></i></a></li>
+					</ul>
+					<h2>Wi-Fi Cards Beautifier</h2>
+					<ul class="tools">
+						<li><a href="https://github.com/knznsmn/amha"><i class="i-github"></i></a></li>
+					</ul>
+        		</header>`
 	}
 	else {
 		return "";
@@ -42,9 +42,13 @@ function Header(show) {
 }
 function Footer(show) {
 	const year = new Date().getFullYear();
-	return `<footer id="footer">
-			<p class="small">&copy; ${year} knznsmn. All rights reserved.</p>
-			</footer>`
+	return `<section class="credits">
+				<p class="js">I don't have OCD. I have CDO. It's like OCD, but the letters are arranged alphabetically, as they should be.</p>
+				<footer id="footer">
+				<p class="small">&copy; ${year} knznsmn. All rights reserved.</p>
+				</footer>
+			</section>
+			`
 }
 function Button(id) {
 	return `<button id="${id}">${id.toUpperCase()}</button>`;
