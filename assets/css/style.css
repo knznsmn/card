@@ -1,0 +1,220 @@
+:root {
+	--mar: hsl(18, 75%, 15%);
+	--red: hsl(18, 75%, 26%);
+	--god: hsl(39, 23%, 49%);
+	--wit: hsl(39, 23%, 90%);
+	--bg-red: linear-gradient(45deg, var(--wit) 0%, var(--god) 100%);
+	--bg-god: linear-gradient(45deg, var(--god) 0%, var(--wit) 100%);
+}
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+@font-face {
+	font-family: 'icon';
+	src:  url('../fonts/icon.eot?se2rfs');
+	src:  url('../fonts/icon.eot?se2rfs#iefix') format('embedded-opentype'),
+	url('../fonts/icon.ttf?se2rfs') format('truetype'),
+	url('../fonts/icon.woff?se2rfs') format('woff'),
+	url('../fonts/icon.svg?se2rfs#icon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+i {
+	font-family: 'icon' !important;
+	speak: never;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.i-amha:before {
+	content: "\e900";
+}
+.i-print:before {
+	content: "\e901";
+}
+.i-repeat:before {
+	content: "\e90d";
+}
+.i-github:before {
+	content: "\e907";
+}
+body {
+	margin: 0 auto;
+	font-family: Arial, sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/*background: var(--bg-god);*/
+	/*background: url(../img/bg.jpg) repeat;*/
+	color: var(--mar);
+}
+header {
+	display: flex;
+	align-self: stretch;
+	justify-content: space-between;
+	padding: 1rem;
+}
+header ul li {
+	list-style: none;
+	font-size: 1.5rem;
+}
+header .tools {
+	display: flex;
+}
+a:link, a:visited {
+	text-decoration: none;
+	color: var(--red);
+}
+a:hover {
+	color: var(--god);
+	scale: 1.5;
+}
+a:active {
+	color: var(--mar);
+}
+#main {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+#pane {
+	margin: 0 auto;
+	width: calc(500px * 1.618);
+	height: 500px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: solid #000 1px;
+	border-radius: 1rem;
+}
+.selections {
+	display: flex;
+	align-items: center;
+	margin: 2rem;
+	width: 200px;
+	height: 100px;
+	background: hsl(125, 42%, 90%);
+	text-align: center;
+	padding: 20px;
+	border-radius: 10px;
+}
+.selections img {
+	width: 50%;
+	padding: 5px;
+}
+/* Textbox() */
+#textbox {
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+textarea, .drop {
+	margin: 1rem;
+	padding: 1rem;
+	background: hsla(39, 23%, 80%, 0.2);
+	text-align: center;
+}
+textarea:focus, .drop:focus {
+	background: hsla(39, 23%, 80%, 0.5);
+}
+textarea::placeholder, .drop::placeholder {
+	text-align: center;
+}
+select, option {
+	background: transparent;
+	padding: .5rem;
+}
+button {
+	background: linear-gradient(var(--mar), var(--red));
+	padding: 1rem 2rem;
+	border-radius: .5rem;
+	border: none;
+	color: var(--god);
+	box-shadow: 0 5px 5px var(--mar);
+}
+button:hover {
+	scale: .9;
+	color: var(--wit);
+}
+/* Wi-Fi Cards */
+.card {
+	width: 5cm;
+	height: 3.5cm;
+	position: relative;
+	border: 2px solid #000;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	margin: 2px;
+	font-size: 14px;
+	font-weight: bold;
+}
+.card img {
+	width: 35%;
+	height: auto;
+}
+#card-logo {
+	z-index: 2
+}
+#card-wifi {
+	/*z-index: -1;*/
+	position: absolute;
+	width: 100%;
+	opacity: .2;
+}
+.card p {
+	margin-bottom: 5px;
+}
+.small {
+	font-size: 0.75rem;
+}
+.heavy {
+	font-weight: bolder;
+	text-transform: uppercase;
+}
+.page {
+	page-break-after: always;
+	width: 21cm;
+	min-height: 29.7cm;
+	display: flex;
+	justify-content: center;
+	align-content: space-around;
+	flex-wrap: wrap;
+	padding: 5px;
+	box-sizing: border-box;
+	margin-bottom: 5px;
+}
+
+/* JS Components */
+.hide {
+	display: none;
+}
+
+@media print {
+	/*body, body *, header, footer {*/
+		margin: 0;
+	/*	visibility: hidden;*/
+	/*	background: white;*/
+	/*}*/
+	div#a4 * {
+		visibility: visible;
+		margin: auto;
+		background: white;
+		color: black;
+	}
+}
