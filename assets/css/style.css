@@ -235,14 +235,13 @@ button:hover {
 }
 
 @media print {
-	body, body *, header, footer {
+	body {
 		margin: 0;
-		visibility: hidden;
 		background: white;
 	}
-	div#a4 * {
+	div#page * {
 		visibility: visible;
-		margin: auto;
+		margin: 0 auto;
 		background: white;
 		color: black;
 	}
