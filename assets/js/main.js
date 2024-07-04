@@ -153,7 +153,7 @@ function pageGen(type) {
 		}
 	}
 	else if (type === "code") {
-		cardsPerPage = 198;
+		cardsPerPage = 420;
 		cardClass = 'code';
 
 		for (let i = 0; i < matches.length; i += cardsPerPage) {
@@ -171,7 +171,7 @@ function pageGen(type) {
 		}
 	}
 	main.remove();
-	setTimeout(printContainer(), 2000);
+	setTimeout(printContainer(), 3000);
 }
 function printContainer() {
 	window.print();
