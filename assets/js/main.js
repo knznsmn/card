@@ -79,7 +79,7 @@ function just32(a, type) {
 		typeMaxNo = 32;
 	}
 	else if (type === 'code') {
-		typeMaxNo = 198;
+		typeMaxNo = 420;
 	}
 	const remainder = a.length % typeMaxNo;
 	if (remainder !== 0) {
