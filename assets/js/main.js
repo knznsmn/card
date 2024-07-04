@@ -126,7 +126,7 @@ function pageGen(type) {
 		}
 	}
 	else if (type === "code") {
-		cardsPerPage = 240;
+		cardsPerPage = 190;
 		cardClass = 'code';
 
 		for (let i = 0; i < matches.length; i += cardsPerPage) {
