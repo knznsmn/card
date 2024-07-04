@@ -10,8 +10,7 @@ const cms = {
 			<p>Generate<br> Wi-Fi Cards</p>`,
 	list: `<img id="selectList" src="assets/img/list.png" alt="List icon">
 			<p>Generate<br> Wi-Fi List</p>`,
-	hold: `This program formats WiFi code cards to fit on A4 pages, with 32 cards per page. 
-			It's best to generate access codes in multiples of 32.`
+	hold: `This program formats WiFi code cards to fit on A4 pages, with 32 cards per page. It's best to generate access codes in multiples of 32.`
 }
 // const $ = {
 // 	// h1: document.getElementsByTagName('h1')[0],
