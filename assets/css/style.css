@@ -239,7 +239,7 @@ button:hover {
 		margin: 0;
 		background: white;
 	}
-	div#page * {
+	div.page {
 		visibility: visible;
 		margin: 0 auto;
 		background: white;
