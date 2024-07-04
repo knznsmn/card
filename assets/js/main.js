@@ -10,6 +10,7 @@ const cms = {
 			<p>Generate<br> Wi-Fi Cards</p>`,
 	list: `<img id="selectList" src="assets/img/list.png" alt="List icon">
 			<p>Generate<br> Wi-Fi List</p>`,
+	hold: `This program formats Wi-Fi code cards to fit on A4 pages, with 32 cards or 200 codes per page. It's best to generate access codes in multiples of 32.`,
 }
 // const $ = {
 // 	// h1: document.getElementsByTagName('h1')[0],
@@ -27,10 +28,11 @@ function Header(show) {
 	if (show) {
 		return `<header id="menu">
 				<ul>
-					<li><a href="#"><i id="home" class="i-amha"></i></a></li>
+					<li><a href="/"><i id="home" class="i-amha"></i></a></li>
 				</ul>
+				<h2>Wi-Fi Codes Formatter</h2>
 				<ul class="tools">
-					<li><a href="https://github.com/knznsmn/wificard"><i class="i-github"></i></a></li>
+					<li><a href="https://github.com/knznsmn/amha"><i class="i-github"></i></a></li>
 				</ul>
         	</header>`
 	}
@@ -39,15 +41,10 @@ function Header(show) {
 	}
 }
 function Footer(show) {
-	if (show) {
-		return `<footer id="footer">
-            	<p class="small">&copy; 2024 knznsmn. All rights reserved.</p>
-        	</footer>`
-	}
-	else {
-		return '';
-	}
-
+	const year = new Date().getFullYear();
+	return `<footer id="footer">
+			<p class="small">&copy; ${year} knznsmn. All rights reserved.</p>
+			</footer>`
 }
 function Button(id) {
 	return `<button id="${id}">${id.toUpperCase()}</button>`;
@@ -61,14 +58,6 @@ function Option() {
 					<option value="month">Month</option>
 				</select>
 			 </div>`
-}
-function Paper() {
-	const a4 = document.createElement('div');
-	a4.setAttribute('id', 'a4');
-	a4.innerHTML = '';
-}
-function Page() {
-
 }
 // Processes
 function just32(a, type) {
@@ -116,7 +105,7 @@ function pageGen(type) {
 				const card = document.createElement('div');
 				card.className = cardClass;
 				card.innerHTML = `<img id="card-logo" src="./assets/img/logo.png" alt="AMHA logo">
-						<img id="card-wifi" src="./assets/img/wifi.png" alt="Wifi icon">
+						<img id="card-wifi" src="./assets/img/wifi.png" alt="Wi-Fi icon">
 						<p class="small">AMHA-GUEST</p>
 						<p class="small">Access Code:<span class="heavy"> ${number}</span></p>
 						<p class="small">1 ${btn.duration.value}</span> access for 5 devices</p>`;
@@ -155,7 +144,6 @@ function Start() {
 	main.insertAdjacentHTML("afterbegin", Header(true));
 	main.insertAdjacentHTML("beforeend", Footer(true));
 	document.addEventListener('click', function(e) {
-		console.log(e.target.id);
 		switch (e.target.id) {
 			case "selectCard":
 				console.log("Generate cards");
@@ -177,9 +165,7 @@ function Start() {
 			</div>`;
 }
 function Textbox(type) {
-	console.log(`Textbox() loaded...`)
 	document.addEventListener('click', function (e) {
-
 		const $ = {
 			h1: document.getElementsByTagName('h1')[0],
 			menu: document.getElementsByTagName('header')[0],
@@ -202,7 +188,8 @@ function Textbox(type) {
 					pageGen(type);
 				}, 1000);
 				break;
-			case 'card-logo' || 'number':
+			case 'card-logo':
+			case 'number':
 				printContainer();
 				break;
 			default:
@@ -212,21 +199,14 @@ function Textbox(type) {
 	return `<div id="textbox">
 				<h1 id="h1"></h1>
 				<label for="inputText"></label>
-				<textarea id="inputText" rows="10" cols="50" placeholder="This program formats WiFi code cards to fit on A4 pages, with 32 cards or 420 codes per page. It's best to generate access codes in multiples of 32.">		
-				</textarea>
+				<textarea id="inputText" rows="10" cols="40" placeholder="${cms.hold}"></textarea>
 				${Option()}
 				${Button('start')}
 			</div>`;
 }
-function Clear() {
-	Header(false)
-	Start(false)
-	Textbox(false)
-	Footer(false)
-}
-
 // MAIN()
 pane.innerHTML = Start(true);
+
 
 
 
