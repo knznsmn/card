@@ -77,7 +77,7 @@ function just32(a, type) {
 		typeMaxNo = 32;
 	}
 	else if (type === 'code') {
-		typeMaxNo = 240;
+		typeMaxNo = 200;
 	}
 	const remainder = a.length % typeMaxNo;
 	if (remainder !== 0) {
@@ -126,7 +126,7 @@ function pageGen(type) {
 		}
 	}
 	else if (type === "code") {
-		cardsPerPage = 190;
+		cardsPerPage = 200;
 		cardClass = 'code';
 
 		for (let i = 0; i < matches.length; i += cardsPerPage) {
