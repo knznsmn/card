@@ -241,6 +241,7 @@ button:hover {
 	}
 	div.page {
 		visibility: visible;
+		align-items: center;
 		margin: 0 auto;
 		background: white;
 		color: black;
