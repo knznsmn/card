@@ -10,7 +10,7 @@ const cms = {
 			<p>Generate<br> Wi-Fi Cards</p>`,
 	list: `<img id="selectList" src="assets/img/list.png" alt="List icon">
 			<p>Generate<br> Wi-Fi List</p>`,
-	hold: `This program formats Wi-Fi code cards to fit on A4 pages, with 32 cards or 200 codes per page. It's best to generate access codes in multiples of 32.`,
+	hold: `This program formats Wi-Fi code cards to fit on A4 pages, with 32 cards per page, or at least 200 codes for a list. It's best to generate access codes in multiples of 32.`,
 }
 // const $ = {
 // 	// h1: document.getElementsByTagName('h1')[0],
@@ -28,7 +28,7 @@ function Header(show) {
 	if (show) {
 		return `<header id="menu">
 				<ul>
-					<li><a href="/"><i id="home" class="i-amha"></i></a></li>
+					<li><a href=""><i id="home" class="i-amha"></i></a></li>
 				</ul>
 				<h2>Wi-Fi Codes Formatter</h2>
 				<ul class="tools">
@@ -140,21 +140,16 @@ function printContainer() {
 
 // UI
 function Start() {
-	console.log(`Start() loaded...`);
 	main.insertAdjacentHTML("afterbegin", Header(true));
 	main.insertAdjacentHTML("beforeend", Footer(true));
 	document.addEventListener('click', function(e) {
 		switch (e.target.id) {
 			case "selectCard":
-				console.log("Generate cards");
 				pane.innerHTML = Textbox("card");
 				break;
 			case "selectList":
-				console.log("Generate lists");
 				pane.innerHTML = Textbox("code");
 				break;
-			default:
-				console.log(e.target.id);
 		}
 	})
 	return `<div class="selections">
@@ -192,8 +187,8 @@ function Textbox(type) {
 			case 'number':
 				printContainer();
 				break;
-			default:
-				console.log(e.target.id);
+			case 'home':
+				location.reload();
 		}
 	});
 	return `<div id="textbox">
@@ -206,7 +201,13 @@ function Textbox(type) {
 }
 // MAIN()
 pane.innerHTML = Start(true);
-
+window.addEventListener('keydown', function(e) {
+	console.log(e.key);
+	switch (e.key) {
+		case 'Escape':
+			location.reload();
+	}
+})
 
 
 
