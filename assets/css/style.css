@@ -218,8 +218,8 @@ button:hover {
 }
 .page {
 	page-break-after: always;
-	width: calc(21cm + .5cm);
-	height: calc(29.7cm + .5cm);
+	width: calc(21cm + 0.5cm);
+	height: calc(29.7cm + 0.5cm);
 	display: flex;
 	justify-content: center;
 	align-content: space-around;
