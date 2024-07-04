@@ -10,7 +10,6 @@ const cms = {
 			<p>Generate<br> Wi-Fi Cards</p>`,
 	list: `<img id="selectList" src="assets/img/list.png" alt="List icon">
 			<p>Generate<br> Wi-Fi List</p>`,
-	hold: `This program formats WiFi code cards to fit on A4 pages, with 32 cards per page. It's best to generate access codes in multiples of 32.`
 }
 // const $ = {
 // 	// h1: document.getElementsByTagName('h1')[0],
@@ -91,31 +90,6 @@ function extract(type) {
 	const regex = /\b\d{5,6}\b/g;
 	return just32(inputText.match(regex) || [], type);
 }
-function listGen() {
-	const btn = {
-		duration: document.getElementById('duration'),
-	}
-	const matches = extract();
-
-	Paper();
-	const codePerPage = 32;
-	body.appendChild(a4);
-	for (let i = 0; i < matches.length; i += codePerPage) {
-		const page = document.createElement('div');
-		page.className = 'page';
-
-		const pageMatches = matches.slice(i, i + codePerPage);
-		pageMatches.forEach(number => {
-			const code = document.createElement('div');
-			code.className = 'code';
-			code.innerHTML = `<p class="heavy">${number}</span></p>`;
-
-			page.appendChild(code);
-		});
-		a4.appendChild(page);
-	}
-	main.remove();
-}
 function pageGen(type) {
 	const btn = {
 		duration: document.getElementById('duration'),
@@ -170,7 +144,6 @@ function pageGen(type) {
 		}
 	}
 	main.remove();
-	setTimeout(printContainer(), 3000);
 }
 function printContainer() {
 	window.print();
@@ -205,7 +178,6 @@ function Start() {
 }
 function Textbox(type) {
 	console.log(`Textbox() loaded...`)
-	let button = Button("start");
 	document.addEventListener('click', function (e) {
 
 		const $ = {
@@ -222,7 +194,7 @@ function Textbox(type) {
 		}
 		switch (e.target.id) {
 			case 'start':
-				const matches = extract();
+				const matches = extract(type);
 				$.h1.innerHTML = `Processing ${matches.length} access codes`;
 				setTimeout(() => {
 					$.h1.innerHTML = `${type} page will be generated.`;
@@ -240,10 +212,10 @@ function Textbox(type) {
 	return `<div id="textbox">
 				<h1 id="h1"></h1>
 				<label for="inputText"></label>
-				<textarea id="inputText" rows="10" cols="50" placeholder="${cms.hold}">		
+				<textarea id="inputText" rows="10" cols="50" placeholder="This program formats WiFi code cards to fit on A4 pages, with 32 cards or 420 codes per page. It's best to generate access codes in multiples of 32.">		
 				</textarea>
 				${Option()}
-				${button}
+				${Button('start')}
 			</div>`;
 }
 function Clear() {
