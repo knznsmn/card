@@ -30,7 +30,7 @@ function Header(show) {
 				<ul>
 					<li><a href=""><i id="home" class="i-amha"></i></a></li>
 				</ul>
-				<h2>Wi-Fi Codes Formatter</h2>
+				<h2>Wi-Fi Cards Beautifier</h2>
 				<ul class="tools">
 					<li><a href="https://github.com/knznsmn/amha"><i class="i-github"></i></a></li>
 				</ul>
