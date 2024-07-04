@@ -165,7 +165,6 @@ function pageGen(type) {
 		}
 	}
 	main.remove();
-	printContainer();
 }
 function printContainer() {
 	window.print();
