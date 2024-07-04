@@ -176,12 +176,38 @@ function Textbox(type) {
 		switch (e.target.id) {
 			case 'start':
 				const matches = extract(type);
-				$.h1.innerHTML = `Processing ${matches.length} access codes`;
-				setTimeout(() => {
-					$.h1.innerHTML = `${type} page will be generated.`;
-					// button = Button("generate");
-					pageGen(type);
-				}, 1000);
+				if (type === "card") {
+					if (matches.length < 32) {
+						$.h1.innerHTML = `${matches.length} codes? I need at least 32 codes to work with...`;
+						setTimeout(() => {
+							location.reload()
+						}, 5000);
+					}
+					else {
+						$.h1.innerHTML = `Processing ${matches.length} access codes...`;
+						setTimeout(() => {
+							$.h1.innerHTML = `Wi-Fi ${type} page will be generated.`;
+							pageGen(type);
+						}, 1500);
+					}
+				}
+				else if (type === "code") {
+					if (matches.length < 200) {
+						$.h1.innerHTML = `${matches.length} codes? I need at least 200 codes to create a Wi-Fi list...`;
+						setTimeout(() => {
+							location.reload()
+						}, 7000);
+					}
+					else {
+						$.h1.innerHTML = `Processing ${matches.length} access codes...`;
+						setTimeout(() => {
+							$.h1.innerHTML = `Wi-Fi ${type} page will be generated.`;
+							pageGen(type);
+						}, 1500);
+					}
+
+				}
+
 				break;
 			case 'card-logo':
 			case 'number':
