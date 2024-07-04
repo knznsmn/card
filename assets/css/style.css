@@ -218,8 +218,8 @@ button:hover {
 }
 .page {
 	page-break-after: always;
-	width: calc(21cm - 1);
-	height: calc(29.7cm - 1);
+	width: 21cm;
+	height: 29.7cm;
 	display: flex;
 	justify-content: center;
 	align-content: space-around;
@@ -239,7 +239,7 @@ button:hover {
 		margin: 0;
 		background: white;
 	}
-	div.page {
+	.page {
 		visibility: visible;
 		margin: 0 auto;
 		background: white;
