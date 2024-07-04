@@ -219,7 +219,7 @@ button:hover {
 .page {
 	page-break-after: always;
 	width: 21cm;
-	min-height: 29.7cm;
+	height: 29.7cm;
 	display: flex;
 	justify-content: center;
 	align-content: space-around;
