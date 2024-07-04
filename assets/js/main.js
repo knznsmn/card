@@ -64,6 +64,14 @@ function Option() {
 				</select>
 			 </div>`
 }
+function Paper() {
+	const a4 = document.createElement('div');
+	a4.setAttribute('id', 'a4');
+	a4.innerHTML = '';
+}
+function Page() {
+
+}
 // Processes
 function just32(a) {
 	const remainder = a.length % 32;
@@ -77,44 +85,94 @@ function extract() {
 	const regex = /\b\d{5,6}\b/g;
 	return just32(inputText.match(regex) || []);
 }
-function cardGen() {
+function listGen() {
 	const btn = {
 		duration: document.getElementById('duration'),
 	}
 	const matches = extract();
 
-	// Get the A4 container element
-	const a4 = document.createElement('div');
-	a4.setAttribute('id', 'a4');
-	a4.innerHTML = '';
-	const cardsPerPage = 32;
+	Paper();
+	const codePerPage = 32;
 	body.appendChild(a4);
-	for (let i = 0; i < matches.length; i += cardsPerPage) {
+	for (let i = 0; i < matches.length; i += codePerPage) {
 		const page = document.createElement('div');
 		page.className = 'page';
 
-		const pageMatches = matches.slice(i, i + cardsPerPage);
+		const pageMatches = matches.slice(i, i + codePerPage);
 		pageMatches.forEach(number => {
-			const card = document.createElement('div');
-			card.className = 'card';
-			card.innerHTML = `<img id="card-logo" src="./assets/img/logo.png" alt="AMHA logo">
-                                <img id="card-wifi" src="./assets/img/wifi.png" alt="Wifi icon">
-                                <p class="small">AMHA-GUEST</p>
-                                <p class="small">Access Code:<span class="heavy"> ${number}</span></p>
-                                <p class="small">1 ${btn.duration.value}</span> access for 5 devices</p>`;
+			const code = document.createElement('div');
+			code.className = 'code';
+			code.innerHTML = `<p class="heavy">${number}</span></p>`;
 
-			page.appendChild(card);
+			page.appendChild(code);
 		});
 		a4.appendChild(page);
 	}
 	main.remove();
+}
+function pageGen(type) {
+	const btn = {
+		duration: document.getElementById('duration'),
+	}
+	const matches = extract();
+
+	const a4 = document.createElement('div');
+	a4.setAttribute('id', 'a4');
+	a4.innerHTML = '';
+	body.appendChild(a4);
+	let cardsPerPage,
+		cardContent,
+		cardClass;
+	if (type === "card") {
+		cardsPerPage = 32;
+		cardClass = 'card';
+
+		for (let i = 0; i < matches.length; i += cardsPerPage) {
+			const page = document.createElement('div');
+			page.className = 'page';
+
+			const pageMatches = matches.slice(i, i + cardsPerPage);
+			pageMatches.forEach(number => {
+				const card = document.createElement('div');
+				card.className = cardClass;
+				card.innerHTML = `<img id="card-logo" src="./assets/img/logo.png" alt="AMHA logo">
+						<img id="card-wifi" src="./assets/img/wifi.png" alt="Wifi icon">
+						<p class="small">AMHA-GUEST</p>
+						<p class="small">Access Code:<span class="heavy"> ${number}</span></p>
+						<p class="small">1 ${btn.duration.value}</span> access for 5 devices</p>`;
+				page.appendChild(card);
+			});
+			a4.appendChild(page);
+		}
+	}
+	else if (type === "code") {
+		console.log("IT'S 198!");
+		cardsPerPage = 198;
+		cardClass = 'code';
+
+		for (let i = 0; i < matches.length; i += cardsPerPage) {
+			const page = document.createElement('div');
+			page.className = 'page';
+
+			const pageMatches = matches.slice(i, i + cardsPerPage);
+			pageMatches.forEach(number => {
+				const card = document.createElement('div');
+				card.className = cardClass;
+				card.innerHTML = `<p id="number" class="heavy">${number}</p>`;
+				page.appendChild(card);
+			});
+			a4.appendChild(page);
+		}
+	}
+	main.remove();
+	printContainer();
 }
 function printContainer() {
 	window.print();
 }
 
 // UI
-function Start(show) {
+function Start() {
 	console.log(`Start() loaded...`);
 	main.insertAdjacentHTML("afterbegin", Header(true));
 	main.insertAdjacentHTML("beforeend", Footer(true));
@@ -123,28 +181,24 @@ function Start(show) {
 		switch (e.target.id) {
 			case "selectCard":
 				console.log("Generate cards");
-				pane.innerHTML = Textbox(true);
+				pane.innerHTML = Textbox("card");
 				break;
 			case "selectList":
 				console.log("Generate lists");
+				pane.innerHTML = Textbox("code");
 				break;
 			default:
 				console.log(e.target.id);
 		}
 	})
-	if (show) {
-		return `<div class="selections">
-					${cms.card}
-				</div>
-				<div class="selections">
-					${cms.list}
-				</div>`;
-	}
-	else {
-		return '';
-	}
+	return `<div class="selections">
+				${cms.card}
+			</div>
+			<div class="selections">
+				${cms.list}
+			</div>`;
 }
-function Textbox(show) {
+function Textbox(type) {
 	console.log(`Textbox() loaded...`)
 	let button = Button("start");
 	document.addEventListener('click', function (e) {
@@ -166,12 +220,10 @@ function Textbox(show) {
 				const matches = extract();
 				$.h1.innerHTML = `Processing ${matches.length} access codes`;
 				setTimeout(() => {
-					$.h1.innerHTML = `Press the button to generate the cards`;
+					$.h1.innerHTML = `${type} page will be generated.`;
 					// button = Button("generate");
-					cardGen();
+					pageGen(type);
 				}, 1000);
-				header.classList.add('hide');
-				footer.classList.add('hide');
 				break;
 			case 'card-logo':
 				printContainer();
@@ -180,19 +232,14 @@ function Textbox(show) {
 				console.log(e.target.id);
 		}
 	});
-	if (show) {
-		return `<div id="textbox">
-					<h1 id="h1"></h1>
-					<label for="inputText"></label>
-					<textarea id="inputText" rows="10" cols="50" placeholder="${cms.hold}">		
-					</textarea>
-					${Option()}
-					${button}
-				</div>`;
-	}
-	else {
-		return '';
-	}
+	return `<div id="textbox">
+				<h1 id="h1"></h1>
+				<label for="inputText"></label>
+				<textarea id="inputText" rows="10" cols="50" placeholder="${cms.hold}">		
+				</textarea>
+				${Option()}
+				${button}
+			</div>`;
 }
 function Clear() {
 	Header(false)

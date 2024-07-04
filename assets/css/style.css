@@ -164,6 +164,15 @@ button:hover {
 	font-size: 14px;
 	font-weight: bold;
 }
+.code {
+	width: 2cm;
+	height: 1.2cm;
+	border: 1px solid var(--god);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 2px;
+}
 .card img {
 	width: 35%;
 	height: auto;
