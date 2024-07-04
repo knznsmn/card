@@ -202,7 +202,7 @@ button:hover {
 #card-wifi {
 	/*z-index: -1;*/
 	position: absolute;
-	width: 80%;
+	width: 4cm;
 	height: auto;
 	opacity: .2;
 }
