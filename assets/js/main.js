@@ -176,6 +176,7 @@ function Textbox(type) {
 			text: document.getElementsByTagName('textarea')[0],
 			drop: document.querySelector('.drop'),
 			img: document.getElementById('signature'),
+			msg: document.getElementById('msg'),
 		}
 		const btn = {
 			print: document.getElementById('print'),
@@ -188,7 +189,7 @@ function Textbox(type) {
 				const testMatches = extract("test")
 				if (type === "card") {
 					if (matches.length < 32) {
-						$.h1.innerHTML = `Only ${testMatches.length} codes? I need at least 32 codes to work with...`;
+						$.h1.innerHTML = `${testMatches.length} codes? I need at least 32 codes to work with...`;
 						setTimeout(() => {
 							location.reload()
 						}, 5000);
@@ -203,7 +204,7 @@ function Textbox(type) {
 				}
 				else if (type === "code") {
 					if (matches.length < 200) {
-						$.h1.innerHTML = `Just ${testMatches.length} codes? I need at least 200 codes to create a Wi-Fi list...`;
+						$.h1.innerHTML = `${testMatches.length} codes? I need at least 200 codes to create a Wi-Fi list...`;
 						setTimeout(() => {
 							location.reload()
 						}, 7000);
@@ -215,9 +216,7 @@ function Textbox(type) {
 							pageGen(type);
 						}, 1500);
 					}
-
 				}
-
 				break;
 			case 'card-logo':
 			case 'number':
@@ -229,6 +228,7 @@ function Textbox(type) {
 	});
 	return `<div id="textbox">
 				<h1 id="h1"></h1>
+				<p id="msg"></p>
 				<label for="inputText"></label>
 				<textarea id="inputText" rows="10" cols="40" placeholder="${cms.hold}"></textarea>
 				${Option()}
