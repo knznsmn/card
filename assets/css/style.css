@@ -80,9 +80,6 @@ a:hover {
 a:active {
 	color: var(--mar);
 }
-h1 {
-	text-align: center;
-}
 h2 {
 	text-transform: uppercase;
 	font-size: 1rem;
@@ -180,6 +177,17 @@ button:hover {
 	scale: .9;
 	color: var(--wit);
 }
+#textbox h1 {
+	text-align: center;
+	margin: 1rem;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+}
+#textbox p {
+	font-size: .85rem;
+	text-align: center;
+	opacity: .5;
+}
 /* Wi-Fi Cards */
 .card {
 	width: 5cm;
@@ -228,6 +236,11 @@ button:hover {
 	font-weight: bolder;
 	text-transform: uppercase;
 }
+
+/* Code Sheet Style */
+#number {
+	margin: auto;
+}
 #a4 {
 	margin: 0;
 	padding: 0;
@@ -250,7 +263,7 @@ button:hover {
 }
 p.js {
 	font-size: .85rem;
-	opacity: 0.3;
+	opacity: 0.25;
 }
 #footer {
 	margin-top: 1rem;
@@ -260,7 +273,7 @@ p.js {
 .hide {
 	display: none;
 }
-@media (width <= 700px) {
+@media (width <= 900px) {
 	#pane {
 		margin: 0 auto;
 		display: flex;
@@ -269,6 +282,10 @@ p.js {
 		align-items: center;
 		border: solid #000 1px;
 		border-radius: 0 1rem 0 1rem;
+	}
+	.selections img {
+		width: 100px;
+		height: auto;
 	}
 }
 @media (width >= 700px) {
@@ -280,12 +297,16 @@ p.js {
 	}
 }
 @media print {
+	@page {
+		size: A4;
+		/*margin: 10mm;*/
+	}
 	body {
 		margin: 0;
 		padding: 0;
 		background: white;
 	}
-	div#a4, .page {
+	.page {
 		margin: 0 auto;
 		background: white;
 		color: black;

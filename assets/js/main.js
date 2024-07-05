@@ -172,11 +172,11 @@ function Textbox(type) {
 	document.addEventListener('click', function (e) {
 		const $ = {
 			h1: document.getElementsByTagName('h1')[0],
+			pa: document.getElementById('msg'),
 			menu: document.getElementsByTagName('header')[0],
 			text: document.getElementsByTagName('textarea')[0],
 			drop: document.querySelector('.drop'),
 			img: document.getElementById('signature'),
-			msg: document.getElementById('msg'),
 		}
 		const btn = {
 			print: document.getElementById('print'),
@@ -207,7 +207,7 @@ function Textbox(type) {
 						$.h1.innerHTML = `${testMatches.length} codes? I need at least 200 codes to create a Wi-Fi list...`;
 						setTimeout(() => {
 							location.reload()
-						}, 7000);
+						}, 5000);
 					}
 					else {
 						$.h1.innerHTML = `Processing ${matches.length} access codes...`;
@@ -226,14 +226,34 @@ function Textbox(type) {
 				location.reload();
 		}
 	});
-	return `<div id="textbox">
-				<h1 id="h1"></h1>
-				<p id="msg"></p>
+	let h1;
+	let pa;
+	let ho;
+	if (type === "card") {
+		h1 = "Generate Beautiful Sheet of Wi-Fi Cards";
+		pa = "This program extracts codes from the payload pasted into the textbox and generates formatted Wi-Fi cards in an A4-sized document.";
+		ho = "Expects a payload containing at least 32 codes.";
+		return `<div id="textbox">
+				<h1 id="h1">${h1}</h1>
+				<p id="msg">${pa}</p>
 				<label for="inputText"></label>
-				<textarea id="inputText" rows="10" cols="40" placeholder="${cms.hold}"></textarea>
+				<textarea id="inputText" rows="10" cols="40" placeholder="${ho}"></textarea>
 				${Option()}
 				${Button('start')}
 			</div>`;
+
+	} else if (type === "code") {
+		h1 = `Generate A Sheet of Wi-Fi Codes`;
+		pa = "This program extracts codes from the payload pasted into the textbox and generates a formatted an A4-sized document of Wi-Fi codes.";
+		ho = "Expects a payload containing at least 200 codes.";
+		return `<div id="textbox">
+				<h1 id="h1">${h1}</h1>
+				<p id="msg">${pa}</p>
+				<label for="inputText"></label>
+				<textarea id="inputText" rows="10" cols="40" placeholder="${ho}"></textarea>
+				${Button('start')}
+			</div>`;
+	}
 }
 // MAIN()
 pane.innerHTML = Start(true);
