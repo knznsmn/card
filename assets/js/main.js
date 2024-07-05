@@ -26,8 +26,8 @@ function Title(show) {
     let h1,
         pa;
     if (true) {
-        h1 = "Select A Function Now";
-        pa = "This program extracts codes from the payload pasted into the textbox and generates formatted Wi-Fi cards in an A4-sized document.";
+        h1 = "Choose A Function";
+        pa = "This program extracts codes from the payload of texts and embeds them into an A4-sized document.";
     }
     else {
         h1 = "";

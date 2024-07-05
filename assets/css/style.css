@@ -93,7 +93,22 @@ h2 {
 	align-items: center;
 }
 /* Start Pane Style */
-
+#title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#h1 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+#msg {
+    margin: 1rem;
+    font-size: .85rem;
+    text-align: center;
+    opacity: .5;
+}
 #pane {
 	width: 50%;
 	margin: 0 auto;
