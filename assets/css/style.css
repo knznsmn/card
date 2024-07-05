@@ -93,27 +93,23 @@ h2 {
 	justify-content: space-between;
 	align-items: center;
 }
+/* Start Pane Style */
+
 #pane {
 	width: 50%;
 	margin: 0 auto;
 	padding: 1rem;
 	display: flex;
-	flex-direction: row;
 	justify-content: center;
 	align-items: center;
 	border-radius: 0 1rem 0 1rem;
 	box-shadow: 5px 5px 15px;
 }
-@media (orientation: portrait) {
-	#pane {
-		height: auto;
-	}
-}
 .selections {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin: 2rem;
+	margin: 1rem;
 	width: 90%;
 	background: var(--god);
 	text-align: center;
@@ -240,6 +236,7 @@ button:hover {
 /* Code Sheet Style */
 #number {
 	margin: auto;
+	cursor: pointer;
 }
 #a4 {
 	margin: 0;
@@ -294,6 +291,11 @@ p.js {
 	}
 	textarea {
 		width: 60%;
+	}
+}
+@media (orientation: portrait) {
+	#pane, #start {
+		height: auto;
 	}
 }
 @media print {

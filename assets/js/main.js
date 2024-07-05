@@ -1,7 +1,5 @@
 // DOM Anchors
 const body = document.getElementsByTagName('body')[0];
-	header = document.getElementById('menu'),
-	footer = document.getElementById('footer');
 const main = document.getElementById('main');
 const pane = document.getElementById('pane');
 
@@ -10,7 +8,6 @@ const cms = {
 			<p>Generate<br> Wi-Fi Cards</p>`,
 	list: `<img id="selectList" src="assets/img/list.png" alt="List icon">
 			<p>Generate<br> Wi-Fi List</p>`,
-	hold: `This program formats Wi-Fi code cards to fit on A4 pages, with 32 cards per page, or at least 200 codes for a list. It's best to generate access codes in multiples of 32.`,
 }
 // const $ = {
 // 	// h1: document.getElementsByTagName('h1')[0],
@@ -39,6 +36,12 @@ function Header(show) {
 	else {
 		return "";
 	}
+}
+function Title() {
+	h1 = "Select A Function";
+	pa = "This program extracts codes from the payload pasted into the textbox and generates formatted Wi-Fi cards in an A4-sized document.";
+	return `<h1 id="h1">${h1}</h1>
+			<p id="msg">${pa}</p>`
 }
 function Footer(show) {
 	const year = new Date().getFullYear();
@@ -166,7 +169,7 @@ function Start() {
 			</div>
 			<div class="selections">
 				${cms.list}
-			</div>`;
+			</div>`
 }
 function Textbox(type) {
 	document.addEventListener('click', function (e) {
@@ -179,17 +182,24 @@ function Textbox(type) {
 			img: document.getElementById('signature'),
 		}
 		const btn = {
-			print: document.getElementById('print'),
+			// print: document.getElementById('print'),
 			start: document.getElementById('start'),
 			duration: document.getElementById('duration'),
 		}
 		switch (e.target.id) {
 			case 'start':
 				const matches = extract(type);
-				const testMatches = extract("test")
+				const testMatches = extract("test");
+				let grammar;
+				if (testMatches.length <= 1) {
+					grammar = "code";
+				}
+				else {
+					grammar = "codes";
+				}
 				if (type === "card") {
 					if (matches.length < 32) {
-						$.h1.innerHTML = `${testMatches.length} codes? I need at least 32 codes to work with...`;
+						$.h1.innerHTML = `${testMatches.length} ${grammar}? I need at least 32 codes to work with...`;
 						setTimeout(() => {
 							location.reload()
 						}, 5000);
