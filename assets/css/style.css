@@ -25,7 +25,6 @@
 }
 i {
 	font-family: 'icon' !important;
-	speak: never;
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
@@ -272,6 +271,7 @@ p.js {
 }
 @media (width <= 900px) {
 	#pane {
+        width: 90%;
 		margin: 0 auto;
 		display: flex;
 		flex-direction: column;
@@ -294,9 +294,14 @@ p.js {
 	}
 }
 @media (orientation: portrait) {
-	#pane, #start {
+	#pane {
 		height: auto;
 	}
+}
+@media (orientation: landscape) {
+    #pane {
+        flex-direction: row;
+    }
 }
 @media print {
 	@page {

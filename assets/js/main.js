@@ -9,39 +9,34 @@ const cms = {
 	list: `<img id="selectList" src="assets/img/list.png" alt="List icon">
 			<p>Generate<br> Wi-Fi List</p>`,
 }
-// const $ = {
-// 	// h1: document.getElementsByTagName('h1')[0],
-// 	menu: document.getElementsByTagName('header')[0],
-// 	text: document.getElementsByTagName('textarea')[0],
-// 	drop: document.querySelector('.drop'),
-// 	img: document.getElementById('signature'),
-// }
-// const btn = {
-// 	start: document.getElementById('start'),
-// 	duration: document.getElementById('duration'),
-// }
+
 // Components
 function Header(show) {
-	if (show) {
-		return `<header id="menu">
-					<ul>
-						<li><a href=""><i id="home" class="i-amha"></i></a></li>
-					</ul>
-					<h2>Wi-Fi Cards Beautifier</h2>
-					<ul class="tools">
-						<li><a href="https://github.com/knznsmn/amha"><i class="i-github"></i></a></li>
-					</ul>
-        		</header>`
-	}
-	else {
-		return "";
-	}
+	return `<header id="menu">
+				<ul>
+					<li><a href=""><i id="home" class="i-amha"></i></a></li>
+				</ul>
+				<h2>Wi-Fi Cards Beautifier</h2>
+				<ul class="tools">
+					<li><a href="https://github.com/knznsmn/amha"><i class="i-github"></i></a></li>
+				</ul>
+    		</header>`;
 }
-function Title() {
-	h1 = "Select A Function";
-	pa = "This program extracts codes from the payload pasted into the textbox and generates formatted Wi-Fi cards in an A4-sized document.";
-	return `<h1 id="h1">${h1}</h1>
-			<p id="msg">${pa}</p>`
+function Title(show) {
+    let h1,
+        pa;
+    if (true) {
+        h1 = "Select A Function Now";
+        pa = "This program extracts codes from the payload pasted into the textbox and generates formatted Wi-Fi cards in an A4-sized document.";
+    }
+    else {
+        h1 = "";
+        pa = "";
+    }
+	return `<div id="title">
+                <h1 id="h1">${h1}</h1>
+			    <p id="msg">${pa}</p>
+            </div>`
 }
 function Footer(show) {
 	const year = new Date().getFullYear();
@@ -50,8 +45,7 @@ function Footer(show) {
 				<footer id="footer">
 				<p class="small">&copy; ${year} knznsmn. All rights reserved.</p>
 				</footer>
-			</section>
-			`
+			</section>`
 }
 function Button(id) {
 	return `<button id="${id}">${id.toUpperCase()}</button>`;
@@ -152,8 +146,9 @@ function printContainer() {
 
 // UI
 function Start() {
-	main.insertAdjacentHTML("afterbegin", Header(true));
-	main.insertAdjacentHTML("beforeend", Footer(true));
+	main.insertAdjacentHTML("afterbegin", Header());
+    pane.insertAdjacentHTML("beforebegin", Title(true));
+	main.insertAdjacentHTML("beforeend", Footer());
 	document.addEventListener('click', function(e) {
 		switch (e.target.id) {
 			case "selectCard":
@@ -172,6 +167,8 @@ function Start() {
 			</div>`
 }
 function Textbox(type) {
+    const title = document.getElementById('title');
+    title.remove();
 	document.addEventListener('click', function (e) {
 		const $ = {
 			h1: document.getElementsByTagName('h1')[0],
@@ -214,7 +211,7 @@ function Textbox(type) {
 				}
 				else if (type === "code") {
 					if (matches.length < 200) {
-						$.h1.innerHTML = `${testMatches.length} codes? I need at least 200 codes to create a Wi-Fi list...`;
+						$.h1.innerHTML = `${testMatches.length} ${grammar}? I need at least 200 codes to create a Wi-Fi list...`;
 						setTimeout(() => {
 							location.reload()
 						}, 5000);
@@ -266,7 +263,7 @@ function Textbox(type) {
 	}
 }
 // MAIN()
-pane.innerHTML = Start(true);
+pane.innerHTML = Start();
 window.addEventListener('keydown', function(e) {
 	console.log(e.key);
 	switch (e.key) {
