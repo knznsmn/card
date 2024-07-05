@@ -81,7 +81,12 @@ function just32(a, type) {
 function extract(type) {
 	const inputText = document.getElementById('inputText').value;
 	const regex = /\b\d{5,6}\b/g;
-	return just32(inputText.match(regex) || [], type);
+	if (type === "test") {
+		return inputText.match(regex) || [];
+	}
+	else {
+		return just32(inputText.match(regex) || [], type);
+	}
 }
 function pageGen(type) {
 	const btn = {
@@ -180,9 +185,10 @@ function Textbox(type) {
 		switch (e.target.id) {
 			case 'start':
 				const matches = extract(type);
+				const testMatches = extract("test")
 				if (type === "card") {
 					if (matches.length < 32) {
-						$.h1.innerHTML = `${matches.length} codes? I need at least 32 codes to work with...`;
+						$.h1.innerHTML = `Only ${testMatches.length} codes? I need at least 32 codes to work with...`;
 						setTimeout(() => {
 							location.reload()
 						}, 5000);
@@ -197,7 +203,7 @@ function Textbox(type) {
 				}
 				else if (type === "code") {
 					if (matches.length < 200) {
-						$.h1.innerHTML = `${matches.length} codes? I need at least 200 codes to create a Wi-Fi list...`;
+						$.h1.innerHTML = `Just ${testMatches.length} codes? I need at least 200 codes to create a Wi-Fi list...`;
 						setTimeout(() => {
 							location.reload()
 						}, 7000);
