@@ -4,9 +4,9 @@ const main = document.getElementById('main');
 const pane = document.getElementById('pane');
 
 const cms = {
-	card: `<img id="selectCard" src="assets/img/card.png" alt="Card icon">
+	card: `<img id="selectCard" src="assets/img/card.svg" alt="Card icon">
 			<p>Generate<br> Wi-Fi Cards</p>`,
-	list: `<img id="selectList" src="assets/img/list.png" alt="List icon">
+	list: `<img id="selectList" src="assets/img/list.svg" alt="List icon">
 			<p>Generate<br> Wi-Fi List</p>`,
 }
 

@@ -4,8 +4,11 @@
 	--red: hsl(18, 75%, 26%);
 	--god: hsl(39, 23%, 49%);
 	--wit: hsl(39, 23%, 90%);
-	--bg-red: linear-gradient(45deg, var(--wit) 0%, var(--god) 100%);
+	--hea: hsla(39, 23%, 90%, 0.2);
+	--bg-red: linear-gradient(135deg, var(--wit) 0%, var(--god) 100%);
 	--bg-god: linear-gradient(45deg, var(--god) 0%, var(--wit) 100%);
+
+	--shadow: 5px 5px 15px;
 }
 * {
 	box-sizing: border-box;
@@ -47,6 +50,7 @@ i {
 	content: "\e907";
 }
 body {
+	background: var(--bg-red);
 	width: 100%;
 	margin: 0 auto;
 	font-family: Arial, sans-serif;
@@ -56,6 +60,7 @@ body {
 	color: var(--mar);
 }
 header {
+	background: var(--hea);
 	display: flex;
 	align-self: stretch;
 	justify-content: space-between;
@@ -94,30 +99,35 @@ h2 {
 }
 /* Start Pane Style */
 #title {
+	margin: 1rem;
+	background: var(--mar);;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+	box-shadow: var(--shadow);
+	border-radius: 2rem 0 ;
+	color: var(--god);
 }
 #h1 {
+	margin: 2rem;
     font-size: 1.2rem;
     text-transform: uppercase;
 }
 #msg {
-    margin: 1rem;
+    margin: 0 3rem 2rem;
     font-size: .85rem;
     text-align: center;
-    opacity: .5;
+    opacity: .8;
 }
 #pane {
-	width: 50%;
 	margin: 0 auto;
 	padding: 1rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border-radius: 0 1rem 0 1rem;
-	box-shadow: 5px 5px 15px;
+	border-radius: 0 2rem;
+	box-shadow: var(--shadow);
 }
 .selections {
 	display: flex;
@@ -136,11 +146,13 @@ h2 {
 }
 
 .selections img {
+	fill: var(--wit);
 	width: 50%;
 	padding: 1rem;
+	transition: all .2s ease-in-out;
 }
 .selections img:hover {
-	scale: 1.2;
+	transform: scale(1.2);
 }
 /* Textbox() */
 #textbox {
@@ -273,7 +285,7 @@ button:hover {
 	margin: 1rem;
 }
 p.js {
-	font-size: .85rem;
+	font-size: .65rem;
 	opacity: 0.25;
 }
 #footer {
@@ -310,6 +322,7 @@ p.js {
 }
 @media (orientation: portrait) {
 	#pane {
+		width: 80%;
 		height: auto;
 	}
 }
