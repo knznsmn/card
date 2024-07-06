@@ -297,7 +297,7 @@ p.js {
 .hide {
 	display: none;
 }
-@media (width <= 900px) {
+@media (width <= 600px) {
 	#pane {
         width: 90%;
 		margin: 0 auto;
@@ -313,7 +313,7 @@ p.js {
 		height: auto;
 	}
 }
-@media (width >= 700px) {
+@media (width >= 600px) {
 	.selections {
 		width: 300px;
 	}

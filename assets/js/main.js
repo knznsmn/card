@@ -11,7 +11,7 @@ const cms = {
 }
 
 // Components
-function Header(show) {
+function Header() {
 	return `<header id="menu">
 				<ul>
 					<li><a href=""><i id="home" class="i-amha"></i></a></li>
@@ -25,7 +25,7 @@ function Header(show) {
 function Title(show) {
     let h1,
         pa;
-    if (true) {
+    if (show === true) {
         h1 = "Choose A Function";
         pa = "This program extracts codes from the payload of texts and embeds them into an A4-sized document.";
     }
@@ -38,7 +38,7 @@ function Title(show) {
 			    <p id="msg">${pa}</p>
             </div>`
 }
-function Footer(show) {
+function Footer() {
 	const year = new Date().getFullYear();
 	return `<section class="credits">
 				<p class="js">I don't have OCD. I have CDO. It's like OCD, but the letters are arranged alphabetically, as they should be.</p>
@@ -239,7 +239,7 @@ function Textbox(type) {
 	if (type === "card") {
 		h1 = "Generate Beautiful Sheet of Wi-Fi Cards";
 		pa = "This program extracts codes from the payload pasted into the textbox and generates formatted Wi-Fi cards in an A4-sized document.";
-		ho = "Expects a payload containing at least 32 codes.";
+		ho = "Expects a payload of texts containing at least 32 codes.";
 		return `<div id="textbox">
 				<h1 id="h1">${h1}</h1>
 				<p id="msg">${pa}</p>
@@ -252,7 +252,7 @@ function Textbox(type) {
 	} else if (type === "code") {
 		h1 = `Generate A Sheet of Wi-Fi Codes`;
 		pa = "This program extracts codes from the payload pasted into the textbox and generates a formatted an A4-sized document of Wi-Fi codes.";
-		ho = "Expects a payload containing at least 200 codes.";
+		ho = "Expects a payload of texts containing at least 200 codes.";
 		return `<div id="textbox">
 				<h1 id="h1">${h1}</h1>
 				<p id="msg">${pa}</p>
