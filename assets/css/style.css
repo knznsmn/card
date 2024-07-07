@@ -3,10 +3,13 @@
 	--mar: hsl(18, 75%, 15%);
 	--red: hsl(18, 75%, 26%);
 	--god: hsl(39, 23%, 49%);
+	--mid: hsl(39, 23%, 70%);
 	--wit: hsl(39, 23%, 90%);
 	--hea: hsla(39, 23%, 90%, 0.2);
 	--bg-red: linear-gradient(135deg, var(--wit) 0%, var(--god) 100%);
-	--bg-god: linear-gradient(45deg, var(--god) 0%, var(--wit) 100%);
+	--bg-god: linear-gradient(45deg, var(--wit) 0%, var(--hea) 70%);
+	--bg-aur: linear-gradient(45deg, var(--god) 0%, var(--mid) 50%, var(--god) 100%);
+	--bg-auh: linear-gradient(45deg, var(--mar) 0%, var(--red) 50%, var(--mar) 100%);
 
 	--shadow: 5px 5px 15px;
 }
@@ -52,6 +55,8 @@ i {
 body {
 	background: var(--bg-red);
 	width: 100%;
+	height: 100vh;
+	min-height: 667px;
 	margin: 0 auto;
 	font-family: Arial, sans-serif;
 	display: flex;
@@ -92,7 +97,7 @@ h2 {
 }
 #main {
 	width: 100vw;
-	height: 100vh;
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -101,7 +106,7 @@ h2 {
 /* Start Pane Style */
 #title {
 	margin: 1rem;
-	background: var(--mar);;
+	background: var(--bg-auh);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -109,20 +114,23 @@ h2 {
 	box-shadow: var(--shadow);
 	border-radius: 2rem 0 ;
 	color: var(--god);
+	animation: fadeIn 1s ease-in forwards;
 }
-#h1 {
+#title #h1 {
 	margin: 2rem;
     font-size: 1.2rem;
     text-transform: uppercase;
+	color: var(--wit);
 }
-#msg {
+#title #msg {
     margin: 0 3rem 2rem;
     font-size: .85rem;
     text-align: center;
-    opacity: .8;
+	color: var(--wit);
+	opacity: .7;
 }
 #pane {
-    background: var(--wit);
+    background: var(--bg-god);
 	margin: 0 auto;
 	padding: 1rem;
 	display: flex;
@@ -130,6 +138,7 @@ h2 {
 	align-items: center;
 	border-radius: 0 2rem;
 	box-shadow: var(--shadow);
+	animation: fadeIn 1s ease-in forwards;
 }
 .selections {
 	display: flex;
@@ -137,7 +146,7 @@ h2 {
 	align-items: center;
 	margin: 1rem;
 	width: 90%;
-	background: var(--god);
+	background: var(--bg-aur);
 	text-align: center;
 	padding: 1rem;
 	border-radius: 10px;
@@ -148,7 +157,7 @@ h2 {
 }
 
 .selections img {
-	fill: var(--wit);
+	cursor: pointer;
 	width: 50%;
 	padding: 1rem;
 	transition: all .2s ease-in-out;
@@ -169,17 +178,18 @@ h2 {
 }
 textarea {
 	width: 100%;
+	height: auto;
 	margin: 1rem;
 	padding: 1rem;
 }
 textarea, .drop {
 	margin: 1rem;
 	padding: 1rem;
-	background: hsla(39, 23%, 80%, 0.2);
+	background: hsla(39, 23%, 90%, 0.2);
 	text-align: center;
 }
 textarea:focus, .drop:focus {
-	background: hsla(39, 23%, 80%, 0.5);
+	background: hsla(39, 23%, 90%, 0.5);
 }
 textarea::placeholder, .drop::placeholder {
 	text-align: center;
@@ -325,7 +335,7 @@ p.js {
 @media (orientation: portrait) {
 	#pane {
 		width: 80%;
-		height: auto;
+		/*min-height: 550px;*/
 	}
 }
 @media (orientation: landscape) {
@@ -347,5 +357,14 @@ p.js {
 		margin: 0 auto;
 		background: white;
 		color: black;
+	}
+}
+/* Keyframes */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
 	}
 }

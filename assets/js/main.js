@@ -271,28 +271,3 @@ window.addEventListener('keydown', function(e) {
 			location.reload();
 	}
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// window.addEventListener('load', () => {
-// 	show;
-// })
