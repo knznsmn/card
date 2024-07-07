@@ -176,6 +176,7 @@ h2 {
 	justify-content: center;
 	align-items: center;
 	align-content: center;
+	animation: fadeIn 1s ease-in forwards;
 }
 textarea {
 	width: 100%;
@@ -292,6 +293,7 @@ button:hover {
 	flex-wrap: wrap;
 	padding: 5px;
 	box-sizing: border-box;
+	animation: fadeIn 1s ease-in forwards;
 }
 .credits {
 	text-align: center;
