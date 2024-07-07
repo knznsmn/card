@@ -71,6 +71,7 @@ header {
 	justify-content: space-between;
 	padding: 1rem;
 	box-shadow: var(--shadow);
+    animation: fadeIn 1s ease-in forwards;
 }
 header ul li {
 	list-style: none;
@@ -104,7 +105,8 @@ h2 {
 	justify-content: space-between;
 	align-items: center;
 }
-/* Start Pane Style */
+
+/* Start Pane Styles */
 #title {
 	margin: 1rem;
 	background: var(--bg-auh);
@@ -166,6 +168,7 @@ h2 {
 .selections img:hover {
 	transform: scale(1.2);
 }
+
 /* Textbox() */
 #textbox {
 	width: 100%;
@@ -224,7 +227,8 @@ button:hover {
 	text-align: center;
 	opacity: .5;
 }
-/* Wi-Fi Cards */
+
+/* Wi-Fi Cards Style */
 .card {
 	width: 5cm;
 	height: 3.35cm;
@@ -323,7 +327,7 @@ p.js {
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		border: solid #000 1px;
+		border: solid var(--god) 1px;
 		border-radius: 0 1rem 0 1rem;
 	}
 	.selections img {

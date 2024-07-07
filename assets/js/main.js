@@ -237,7 +237,7 @@ function Textbox(type) {
 	let ho;
 	if (type === "card") {
 		h1 = "Generate Beautiful Sheet of Wi-Fi Cards";
-		pa = `This program extracts codes from the payload pasted into the textbox, <br /> and generates formatted Wi-Fi cards in an A4-sized document.<br />
+		pa = `This program extracts codes from the payload pasted into the textbox, and generates formatted Wi-Fi cards in an A4-sized document.<br />
 			  To print the output, simply click any of the logos. Press ESC to return to the main interface.`;
 		ho = "Expects a payload of texts containing at least 32 codes.";
 		return `<div id="textbox">
@@ -251,7 +251,7 @@ function Textbox(type) {
 
 	} else if (type === "code") {
 		h1 = `Generate A Sheet of Wi-Fi Codes`;
-		pa = `This program extracts codes from the payload pasted into the textbox, <br /> and generates a formatted an A4-sized document of Wi-Fi codes.<br />
+		pa = `This program extracts codes from the payload pasted into the textbox, and generates a formatted an A4-sized document of Wi-Fi codes.<br />
 			  To print the output, simply click any of the numbers. Press ESC to return to the main interface.`;
 		ho = "Expects a payload of texts containing at least 200 codes.";
 		return `<div id="textbox">
