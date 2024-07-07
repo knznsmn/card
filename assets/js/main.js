@@ -43,7 +43,7 @@ function Footer() {
 	return `<section class="credits">
 				<p class="js">I don't have OCD. I have CDO. It's like OCD, but the letters are arranged alphabetically, as they should be.</p>
 				<footer id="footer">
-				<p class="small"><span class="copy">©</span> ${year} <a href="https://www.github.com/knznsmn">knznsmn</a>. All rights reversed.</p>
+				<p class="small"><span class="copy">©</span> ${year} —Written by <a href="https://www.github.com/knznsmn">knznsmn</a>. All rights reversed.</p>
 				</footer>
 			</section>`
 }
