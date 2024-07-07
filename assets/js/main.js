@@ -43,7 +43,7 @@ function Footer() {
 	return `<section class="credits">
 				<p class="js">I don't have OCD. I have CDO. It's like OCD, but the letters are arranged alphabetically, as they should be.</p>
 				<footer id="footer">
-				<p class="small">&copy; ${year} knznsmn. All rights reserved.</p>
+				<p class="small"><span class="copy">©</span> ${year} <a href="https://www.github.com/knznsmn">knznsmn</a>. All rights reversed.</p>
 				</footer>
 			</section>`
 }
@@ -96,7 +96,6 @@ function pageGen(type) {
 	a4.innerHTML = '';
 	body.appendChild(a4);
 	let cardsPerPage,
-		cardContent,
 		cardClass;
 	if (type === "card") {
 		cardsPerPage = 32;
@@ -238,7 +237,8 @@ function Textbox(type) {
 	let ho;
 	if (type === "card") {
 		h1 = "Generate Beautiful Sheet of Wi-Fi Cards";
-		pa = "This program extracts codes from the payload pasted into the textbox and generates formatted Wi-Fi cards in an A4-sized document.";
+		pa = `This program extracts codes from the payload pasted into the textbox, <br /> and generates formatted Wi-Fi cards in an A4-sized document.<br />
+			  To print the output, simply click any of the logos. Press ESC to return to the main interface.`;
 		ho = "Expects a payload of texts containing at least 32 codes.";
 		return `<div id="textbox">
 				<h1 id="h1">${h1}</h1>
@@ -251,7 +251,8 @@ function Textbox(type) {
 
 	} else if (type === "code") {
 		h1 = `Generate A Sheet of Wi-Fi Codes`;
-		pa = "This program extracts codes from the payload pasted into the textbox and generates a formatted an A4-sized document of Wi-Fi codes.";
+		pa = `This program extracts codes from the payload pasted into the textbox, <br /> and generates a formatted an A4-sized document of Wi-Fi codes.<br />
+			  To print the output, simply click any of the numbers. Press ESC to return to the main interface.`;
 		ho = "Expects a payload of texts containing at least 200 codes.";
 		return `<div id="textbox">
 				<h1 id="h1">${h1}</h1>

@@ -8,7 +8,7 @@
 	--hea: hsla(39, 23%, 90%, 0.2);
 	--bg-red: linear-gradient(135deg, var(--wit) 0%, var(--god) 100%);
 	--bg-god: linear-gradient(45deg, var(--wit) 0%, var(--hea) 70%);
-	--bg-aur: linear-gradient(45deg, var(--god) 0%, var(--mid) 50%, var(--god) 100%);
+	--bg-aur: linear-gradient(45deg, var(--god) 15%, var(--mid) 50%, var(--god) 85%);
 	--bg-auh: linear-gradient(45deg, var(--mar) 0%, var(--red) 50%, var(--mar) 100%);
 
 	--shadow: 5px 5px 15px;
@@ -53,7 +53,7 @@ i {
 	content: "\e907";
 }
 body {
-	background: var(--bg-red);
+	background: var(--wit);
 	width: 100%;
 	height: 100vh;
 	min-height: 667px;
@@ -96,6 +96,7 @@ h2 {
 	cursor: pointer;
 }
 #main {
+	background: var(--bg-red);
 	width: 100vw;
 	height: 100%;
 	display: flex;
@@ -137,7 +138,7 @@ h2 {
 	justify-content: center;
 	align-items: center;
 	border-radius: 0 2rem;
-	box-shadow: var(--shadow);
+	/*box-shadow: var(--shadow);*/
 	animation: fadeIn 1s ease-in forwards;
 }
 .selections {
@@ -295,6 +296,10 @@ button:hover {
 .credits {
 	text-align: center;
 	margin: 1rem;
+}
+span.copy {
+	display: inline-block;
+	transform: rotateY(180deg);
 }
 p.js {
 	font-size: .65rem;
