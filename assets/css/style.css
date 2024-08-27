@@ -77,8 +77,11 @@ header ul li {
 	list-style: none;
 	font-size: 1.5rem;
 }
-header .tools {
+.tools {
 	display: flex;
+}
+.tools li {
+	margin-left: .5em;
 }
 a:link, a:visited {
 	text-decoration: none;

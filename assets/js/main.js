@@ -18,6 +18,7 @@ function Header() {
 				</ul>
 				<h2>Wi-Fi Cards Beautifier</h2>
 				<ul class="tools">
+					<li><a href="https://172.17.10.6/admin/index-login.ant"></a><i class="i-print"></i></li>
 					<li><a href="https://github.com/knznsmn/amha"><i class="i-github"></i></a></li>
 				</ul>
     		</header>`;
