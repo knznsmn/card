@@ -298,8 +298,8 @@ button:hover {
 .page {
 	margin: 0;
 	page-break-after: always;
-	width: 18cm;
-	height: 26.7cm;
+	width: 19cm;
+	height: 28.7cm;
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: repeat(8, 1fr);
