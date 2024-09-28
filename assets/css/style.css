@@ -265,7 +265,7 @@ button:hover {
 #card-wifi {
 	/*z-index: -1;*/
 	position: absolute;
-	width: 4cm;
+	width: 3cm;
 	height: auto;
 	opacity: .2;
 }
@@ -287,7 +287,13 @@ button:hover {
 }
 #a4 {
 	margin: 0;
-	padding: 0;
+	padding: 1rem;
+	width: 21cm;
+	height: 29.7cm;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
 }
 .page {
 	margin: 0;
@@ -297,7 +303,7 @@ button:hover {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: repeat(8, 1fr);
-	gap: .5rem;
+	gap: .4rem;
 	justify-content: center;
 	align-content: center;
 	/*
