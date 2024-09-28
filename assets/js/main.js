@@ -67,8 +67,11 @@ function Option() {
 				<label for="holiday">Holiday: </label>
 				<select name="holiday" id="holiday">
 					<option value="wifi"> </option>
-					<option value="christmas">Christmas</option>
+					<option value="new-year">New Year</option>
 					<option value="valentines">Valentines</option>
+					<option value="ramadan">Ramadan</option>
+					<option value="uae">UAE National Day</option>
+					<option value="christmas">Christmas</option>
 				</select>
 			 </div>`
 }
