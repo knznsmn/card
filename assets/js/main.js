@@ -9,6 +9,11 @@ const cms = {
 	list: `<img id="selectList" src="assets/img/list.svg" alt="List icon">
 			<p>Generate<br> Wi-Fi List</p>`,
 }
+const event = {
+	valentine: `<img id="selectCard" src="assets/img/card.svg" alt="Card icon">`,
+	christmas: `<img id="selectCard" src="assets/img/christmas.png" alt="Christmas">`,
+	
+}
 
 // Components
 function Header() {
@@ -59,6 +64,15 @@ function Option() {
 					<option value="week">Week</option>
 					<option value="month">Month</option>
 				</select>
+				<label for="holiday">Holiday: </label>
+				<select name="holiday" id="holiday">
+					<option value="wifi"> </option>
+					<option value="new-year">New Year</option>
+					<option value="valentines">Valentines</option>
+					<option value="ramadan">Ramadan</option>
+					<option value="uae">UAE National Day</option>
+					<option value="christmas">Christmas</option>
+				</select>
 			 </div>`
 }
 // Processes
@@ -89,6 +103,7 @@ function extract(type) {
 function pageGen(type) {
 	const btn = {
 		duration: document.getElementById('duration'),
+		holiday: document.getElementById('holiday'),
 	}
 	const matches = extract(type);
 
@@ -108,10 +123,10 @@ function pageGen(type) {
 
 			const pageMatches = matches.slice(i, i + cardsPerPage);
 			pageMatches.forEach(number => {
-				const card = document.createElement('div');
+				const card = document.createElement('div'); 
 				card.className = cardClass;
 				card.innerHTML = `<img id="card-logo" src="./assets/img/logo.png" alt="AMHA logo">
-						<img id="card-wifi" src="./assets/img/wifi.png" alt="Wi-Fi icon">
+						<img id="card-wifi" src="./assets/img/${btn.holiday.value}.png" alt="Wi-Fi icon">
 						<p class="small">AMHA-GUEST</p>
 						<p class="small">Access Code:<span class="heavy"> ${number}</span></p>
 						<p class="small">1 ${btn.duration.value}</span> access for 5 devices</p>`;
