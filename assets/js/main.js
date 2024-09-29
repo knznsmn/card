@@ -81,9 +81,26 @@ function yearAsLogo(s) {
 	const year = new Date().getFullYear();
 	const uae = year - 1971;
 
+	function ordinal(n) {
+		n %= 10;
+		
+		if (n === 1) {
+			return 'st';
+		}
+		else if (n === 2) {
+			return 'nd';
+		}
+		else if (n === 3) {
+			return 'rd';
+		}
+		else
+			return 'th';
+	}
+
 	switch (s) {
 		case 'uae':
-			return `<div class="year-logo"><span class="nth">${uae}</span><small>th</small></div>`;
+			console.log(`Check this: ${uae % 10}`);
+			return `<div class="year-logo"><span class="nth">${uae}</span><small>${ordinal(uae)}</small></div>`;
 		case 'new-year':
 			return `<h1 class="year-logo">${year}!</h1>`;
 		default:
