@@ -234,7 +234,7 @@ button:hover {
 /* Wi-Fi Cards Style */
 .card {
 	max-width: 5cm;
-	max-height: 3.35cm;
+	height: 3.35cm;
 	position: relative;
 	border: 1px solid #000;
 	display: flex;
@@ -260,6 +260,7 @@ button:hover {
 	height: auto;
 }
 #card-logo {
+	padding-top: .5rem;
 	z-index: 2
 }
 #card-wifi {
@@ -267,13 +268,33 @@ button:hover {
 	position: absolute;
 	width: 3cm;
 	height: auto;
-	opacity: .2;
+	opacity: .3;
 }
 .card p {
 	margin-bottom: 5px;
 }
+.year-logo {
+	padding-top: .5rem;
+	height: 2cm;
+	display: flex;
+}
+.year-logo span.nth {
+	font-size: 3rem;
+	transform: skewX(-15deg);
+}
+h1.year-logo {
+	font-size: 2rem;
+	transform: skewY(-10deg);
+}
+.year-logo small {
+	font-size: 1rem;
+}
 .small {
+	font-size: 0.65rem;
+}
+.wifi-detail {
 	font-size: 0.75rem;
+	line-height: normal;
 }
 .heavy {
 	font-weight: bolder;
