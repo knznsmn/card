@@ -75,7 +75,40 @@ function Option() {
 				</select>
 			 </div>`
 }
+
 // Processes
+function yearAsLogo(s) {
+	const year = new Date().getFullYear();
+	const uae = year - 1971;
+
+	switch (s) {
+		case 'uae':
+			return `<div class="year-logo"><span class="nth">${uae}</span><small>th</small></div>`;
+		case 'new-year':
+			return `<h1 class="year-logo">${year}!</h1>`;
+		default:
+			return year;
+	}
+	
+}
+
+function holidayLogo(holiday) {
+	switch (holiday) {
+		case 'new-year':
+			return yearAsLogo('new-year');
+		case 'valentines':
+			return `<img id="card-logo" src="./assets/img/valentines.png" alt="Valentines icon">`;
+		case 'ramadan':
+			return `<img id="card-logo" src="./assets/img/ramadan-logo.png" alt="Ramadan greetings">`;
+		case 'uae':
+			return yearAsLogo('uae');
+		case 'christmas':
+			return `<img id="card-logo" src="./assets/img/christmas-logo.png" alt="Christmas logo icon">`;
+		default:
+			return `<img id="card-logo" src="./assets/img/logo.png" alt="AMHA logo">`;
+	}
+}
+
 function just32(a, type) {
 	let typeMaxNo;
 	if (type === 'card') {
@@ -125,10 +158,11 @@ function pageGen(type) {
 			pageMatches.forEach(number => {
 				const card = document.createElement('div'); 
 				card.className = cardClass;
-				card.innerHTML = `<img id="card-logo" src="./assets/img/logo.png" alt="AMHA logo">
+				card.innerHTML = `
+						${holidayLogo(btn.holiday.value)}
 						<img id="card-wifi" src="./assets/img/${btn.holiday.value}.png" alt="Wi-Fi icon">
-						<p class="small">AMHA-GUEST</p>
-						<p class="small">Access Code:<span class="heavy"> ${number}</span></p>
+						<p class="wifi-detail">AMHA-GUEST</p>
+						<p class="wifi-detail">Access Code:<span class="heavy"> ${number}</span></p>
 						<p class="small">1 ${btn.duration.value}</span> access for 5 devices</p>`;
 				page.appendChild(card);
 			});
