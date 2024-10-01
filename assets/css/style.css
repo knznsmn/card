@@ -284,10 +284,14 @@ button:hover {
 }
 h1.year-logo {
 	font-size: 2rem;
+	padding-bottom: .25rem;
 	transform: skewY(-10deg);
 }
 .year-logo small {
 	font-size: 1rem;
+}
+.year-welcome {
+	padding-top: .25rem;
 }
 .small {
 	font-size: 0.65rem;
@@ -308,7 +312,7 @@ h1.year-logo {
 }
 #a4 {
 	margin: 0;
-	padding: 1rem;
+	padding-top: 1.5rem;
 	width: 21cm;
 	height: 29.7cm;
 	display: flex;
@@ -392,6 +396,7 @@ p.js {
 @media print {
 	@page {
 		size: A4;
+		width: 95%;
 		/*margin: 10mm;*/
 	}
 	body {
