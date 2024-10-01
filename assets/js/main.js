@@ -102,7 +102,9 @@ function yearAsLogo(s) {
 			console.log(`Check this: ${uae % 10}`);
 			return `<div class="year-logo"><span class="nth">${uae}</span><small>${ordinal(uae)}</small></div>`;
 		case 'new-year':
-			return `<h1 class="year-logo">${year}!</h1>`;
+			return `
+				<h2 class="year-welcome">Welcome</h2>
+				<h1 class="year-logo">${year + 1}!</h1>`;
 		default:
 			return year;
 	}
@@ -114,7 +116,7 @@ function holidayLogo(holiday) {
 		case 'new-year':
 			return yearAsLogo('new-year');
 		case 'valentines':
-			return `<img id="card-logo" src="./assets/img/valentines.png" alt="Valentines icon">`;
+			return `<img id="card-logo" src="./assets/img/valentines-heart.png" alt="Valentines icon">`;
 		case 'ramadan':
 			return `<img id="card-logo" src="./assets/img/ramadan-logo.png" alt="Ramadan greetings">`;
 		case 'uae':
