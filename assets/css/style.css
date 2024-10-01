@@ -279,6 +279,7 @@ button:hover {
 	display: flex;
 }
 .year-logo span.nth {
+	color: var(--red);
 	font-size: 3rem;
 	transform: skewX(-15deg);
 }
