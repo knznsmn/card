@@ -279,7 +279,7 @@ button:hover {
 	display: flex;
 }
 .year-logo span.nth {
-	color: var(--red);
+	color: var(--god);
 	font-size: 3rem;
 	transform: skewX(-15deg);
 }
