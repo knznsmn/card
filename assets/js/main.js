@@ -207,9 +207,12 @@ function pageGen(type) {
 		}
 	}
 	main.remove();
+	printContainer();
 }
 function printContainer() {
-	window.print();
+	setTimeout(() => {
+		window.print();
+	}, 3000);
 }
 
 // UI
