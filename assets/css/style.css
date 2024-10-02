@@ -10,7 +10,6 @@
 	--bg-god: linear-gradient(45deg, var(--wit) 0%, var(--hea) 70%);
 	--bg-aur: linear-gradient(45deg, var(--god) 15%, var(--mid) 50%, var(--god) 85%);
 	--bg-auh: linear-gradient(45deg, var(--mar) 0%, var(--red) 50%, var(--mar) 100%);
-
 	--shadow: 5px 5px 15px;
 }
 * {
@@ -20,8 +19,8 @@
 }
 @font-face {
 	font-family: 'icon';
-	src:  url('../fonts/icon.eot?se2rfs');
-	src:  url('../fonts/icon.eot?se2rfs#iefix') format('embedded-opentype'),
+	src: url('../fonts/icon.eot?se2rfs');
+	src: url('../fonts/icon.eot?se2rfs#iefix') format('embedded-opentype'),
 	url('../fonts/icon.ttf?se2rfs') format('truetype'),
 	url('../fonts/icon.woff?se2rfs') format('woff'),
 	url('../fonts/icon.svg?se2rfs#icon') format('svg');
@@ -71,7 +70,7 @@ header {
 	justify-content: space-between;
 	padding: 1rem;
 	box-shadow: var(--shadow);
-    animation: fadeIn 1s ease-in forwards;
+	animation: fadeIn 1s ease-in forwards;
 }
 header ul li {
 	list-style: none;
@@ -113,10 +112,10 @@ h2 {
 #title {
 	margin: 1rem;
 	background: var(--bg-auh);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	box-shadow: var(--shadow);
 	border-radius: 2rem 0 ;
 	color: var(--god);
@@ -124,19 +123,19 @@ h2 {
 }
 #title #h1 {
 	margin: 2rem;
-    font-size: 1.2rem;
-    text-transform: uppercase;
+	font-size: 1.2rem;
+	text-transform: uppercase;
 	color: var(--wit);
 }
 #title #msg {
-    margin: 0 3rem 2rem;
-    font-size: .85rem;
-    text-align: center;
+	margin: 0 3rem 2rem;
+	font-size: .85rem;
+	text-align: center;
 	color: var(--wit);
 	opacity: .7;
 }
 #pane {
-    background: var(--bg-god);
+	background: var(--bg-god);
 	margin: 0 auto;
 	padding: 1rem;
 	display: flex;
@@ -232,6 +231,30 @@ button:hover {
 }
 
 /* Wi-Fi Cards Style */
+#a4 {
+	margin: 0;
+	padding-top: 1.5rem;
+	width: 21cm;
+	height: 29.7cm;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
+}
+
+.page {
+	margin: 0;
+	page-break-after: always;
+	width: 19cm;
+	height: 28.7cm;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(8, 1fr);
+	gap: .4rem;
+	justify-content: center;
+	align-content: center;
+	animation: fadeIn 1s ease-in forwards;
+}
 .card {
 	max-width: 5cm;
 	height: 3.35cm;
@@ -239,21 +262,10 @@ button:hover {
 	border: 1px solid #000;
 	display: flex;
 	flex-direction: column;
-	/* justify-content: space-between; */
 	align-items: center;
 	margin: 0px;
 	font-size: 14px;
 	font-weight: bold;
-}
-.code {
-	width: 2cm;
-	height: 1.2cm;
-	border: 1px solid var(--god);
-	display: flex;
-	justify-content: center;
-	align-content: flex-start;
-	align-items: start;
-	margin: 1px;
 }
 .card img {
 	width: 35%;
@@ -264,7 +276,6 @@ button:hover {
 	z-index: 2
 }
 #card-wifi {
-	/*z-index: -1;*/
 	position: absolute;
 	width: 3cm;
 	height: auto;
@@ -307,38 +318,34 @@ h1.year-logo {
 }
 
 /* Code Sheet Style */
-#number {
-	margin: auto;
-	cursor: pointer;
-}
-#a4 {
-	margin: 0;
-	padding-top: 1.5rem;
-	width: 21cm;
-	height: 29.7cm;
-	display: flex;
-	flex-direction: column;
-	justify-content: start;
-	align-items: center;
-}
-.page {
-	margin: 0;
+.code-page {
+	padding: 1rem;
 	page-break-after: always;
 	width: 19cm;
-	height: 28.7cm;
+	height: 26.7cm;
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: repeat(8, 1fr);
-	gap: .4rem;
+	grid-template-columns: repeat(10, 1fr);
+	grid-template-rows: repeat(20, 1fr);
+	gap: .1rem;
 	justify-content: center;
-	align-content: center;
-	/*
-	flex-wrap: wrap;
-	padding: 5px;
-	box-sizing: border-box;
-	*/
 	animation: fadeIn 1s ease-in forwards;
 }
+.code {
+	width: 1.8cm;
+	height: 1.2cm;
+	border: 1px solid var(--god);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 1px;
+	border-radius: .75rem 0 1rem .5rem;
+}
+#code-number {
+	margin: .25rem;
+	padding: .25rem;
+	cursor: pointer;
+}
+
 .credits {
 	text-align: center;
 	margin: 1rem;
@@ -361,7 +368,7 @@ p.js {
 }
 @media (width <= 600px) {
 	#pane {
-        width: 90%;
+    width: 90%;
 		margin: 0 auto;
 		display: flex;
 		flex-direction: column;
@@ -386,7 +393,6 @@ p.js {
 @media (orientation: portrait) {
 	#pane {
 		width: 80%;
-		/*min-height: 550px;*/
 	}
 }
 @media (orientation: landscape) {
@@ -398,7 +404,6 @@ p.js {
 	@page {
 		size: A4;
 		width: 95%;
-		/*margin: 10mm;*/
 	}
 	body {
 		margin: 0;

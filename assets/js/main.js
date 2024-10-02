@@ -194,13 +194,13 @@ function pageGen(type) {
 
 		for (let i = 0; i < matches.length; i += cardsPerPage) {
 			const page = document.createElement('div');
-			page.className = 'page';
+			page.className = 'code-page';
 
 			const pageMatches = matches.slice(i, i + cardsPerPage);
 			pageMatches.forEach(number => {
 				const card = document.createElement('div');
 				card.className = cardClass;
-				card.innerHTML = `<p id="number" class="heavy">${number}</p>`;
+				card.innerHTML = `<p id="code-number" class="heavy">${number}</p>`;
 				page.appendChild(card);
 			});
 			a4.appendChild(page);
