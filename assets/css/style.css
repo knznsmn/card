@@ -237,13 +237,15 @@ button:hover {
 	width: 21cm;
 	height: 29.7cm;
 	display: flex;
+	
 	flex-direction: column;
 	justify-content: start;
 	align-items: center;
 }
 
 .page {
-	margin: 0;
+	margin: 0 auto;
+	padding: .2rem;
 	page-break-after: always;
 	width: 19cm;
 	height: 28.7cm;
@@ -253,6 +255,7 @@ button:hover {
 	gap: .4rem;
 	justify-content: center;
 	align-content: center;
+	border: 1px dashed var(--god);
 	animation: fadeIn 1s ease-in forwards;
 }
 .card {
@@ -321,6 +324,7 @@ h1.year-logo {
 
 /* Code Sheet Style */
 .code-page {
+	margin: 0 auto;
 	padding: 1rem;
 	page-break-after: always;
 	width: 19cm;
