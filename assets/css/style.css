@@ -248,7 +248,7 @@ button:hover {
 	padding: .2rem;
 	page-break-after: always;
 	width: 19cm;
-	height: 28.7cm;
+	max-height: 28.7cm;
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: repeat(8, 1fr);
@@ -260,7 +260,7 @@ button:hover {
 }
 .card {
 	max-width: 5cm;
-	height: 3.35cm;
+	max-height: 3.35cm;
 	position: relative;
 	border: 1px solid #000;
 	display: flex;
@@ -289,12 +289,12 @@ button:hover {
 }
 .year-logo {
 	color: var(--god);
-	padding-top: .5rem;
+	padding-top: .35rem;
 	height: 2cm;
 	display: flex;
 }
 .year-logo span.nth {
-	font-size: 3rem;
+	font-size: 2.5rem;
 	transform: skewX(-15deg);
 }
 h1.year-logo {
