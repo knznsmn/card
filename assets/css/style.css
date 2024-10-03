@@ -409,7 +409,6 @@ p.js {
 @media print {
 	@page {
 		size: A4;
-		width: 95%;
 	}
 	body {
 		margin: 0;
@@ -417,6 +416,7 @@ p.js {
 		background: white;
 	}
 	.page {
+		width: 90%;
 		margin: 0 auto;
 		background: white;
 		color: black;
