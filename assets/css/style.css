@@ -409,15 +409,14 @@ p.js {
 @media print {
 	@page {
 		size: A4;
+		width: 90%;
+		margin: 0 auto;
 	}
 	body {
-		margin: 0;
 		padding: 0;
 		background: white;
 	}
 	.page {
-		width: 90%;
-		margin: 0 auto;
 		background: white;
 		color: black;
 	}
