@@ -252,7 +252,7 @@ button:hover {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: repeat(8, 1fr);
-	gap: .1rem;
+	gap: .05rem;
 	justify-content: center;
 	align-content: center;
 	border: 1px dashed var(--god);
