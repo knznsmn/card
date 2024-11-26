@@ -100,7 +100,13 @@ function yearAsLogo(s) {
 	switch (s) {
 		case 'uae':
 			console.log(`Check this: ${uae % 10}`);
-			return `<div class="year-logo"><span class="nth">${uae}</span><small>${ordinal(uae)}</small></div>`;
+			return `<div class="year-logo"></div>
+					<div class="year-calc">
+						<p>Happy</p>
+						<span class="nth">${uae}</span><small>${ordinal(uae)}</small>
+						<p>National Day</p>
+					</div>
+					`;
 		case 'new-year':
 			return `
 				<h2 class="year-welcome">Welcome</h2>
