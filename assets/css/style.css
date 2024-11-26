@@ -293,9 +293,33 @@ button:hover {
 	height: 2cm;
 	display: flex;
 }
-.year-logo span.nth {
-	font-size: 2.5rem;
-	transform: skewX(-15deg);
+.year-calc {
+	margin: 1rem auto 0;
+	position: absolute;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: url(../img/flag.jpg);
+	background-repeat: repeat;
+	background-position: center;
+	background-size: 2rem;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-align: center;
+	z-index: 10;
+}
+.year-calc p {
+	font-size: .7rem;
+	padding: .25rem;
+}
+.year-calc span {
+	margin-left: .25rem;
+	font-size: 2.2rem;
+}
+.year-calc small {
+	font-size: 1rem;
 }
 h1.year-logo {
 	font-size: 2rem;
