@@ -300,7 +300,7 @@ button:hover {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: conic-gradient(green, white, black, green, black, red, black) 0 0 / 100% 80%;
+	background: conic-gradient(green, black, green, black, red, black) 0 0 / 100% 80%;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 background-size: 3rem;
