@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Corinthia:wght@400;700&display=swap');
+
 :root {
 	--pane-height: 40%;
 	--mar: hsl(18, 75%, 15%);
@@ -260,11 +262,12 @@ button:hover {
 }
 .card {
 	max-width: 5cm;
-	max-height: 3.35cm;
+	min-height: 3.35cm;
 	position: relative;
 	border: 1px solid #000;
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 	align-items: center;
 	margin: 0px;
 	font-size: 14px;
@@ -303,7 +306,7 @@ button:hover {
 	background: conic-gradient(green, black, green, black, red, black) 0 0 / 100% 80%;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-background-size: 3rem;
+	background-size: 3rem;
 	text-align: center;
 	z-index: 10;
 }
@@ -331,6 +334,31 @@ h1.year-logo {
 	padding-top: .25rem;
 	opacity: .65;
 }
+.hero-holidays {
+	position: relative;
+	width: 100%;
+	min-height: 3rem
+}
+.hero-holidays img {
+	position: absolute;
+	z-index: -10;
+	top: 0;
+	width: 100%;
+	height: auto;
+	opacity: .5;
+}
+.hero-holidays h1 {
+	margin: .5rem auto;
+	font-size: 1.5rem;
+	text-align: center;
+	font-family: 'Corinthia', cursive;
+	background: linear-gradient(0deg, green, red, green);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	color: transparent;
+}
+
 .small {
 	font-size: 0.65rem;
 }
