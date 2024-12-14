@@ -128,7 +128,13 @@ function holidayLogo(holiday) {
 		case 'uae':
 			return yearAsLogo('uae');
 		case 'christmas':
-			return `<img id="card-logo" src="./assets/img/christmas-logo.png" alt="Christmas logo icon">`;
+			return `
+				<div class="hero-holidays">
+					<h1>Happy Holidays!</h1>
+					<img class="hero-holidays" src="./assets/img/christmas-bg.png" alt="Christmas logo bg">
+
+				</div>	
+				`;
 		default:
 			return `<img id="card-logo" src="./assets/img/logo.png" alt="AMHA logo">`;
 	}
